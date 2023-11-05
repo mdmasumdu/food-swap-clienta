@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import useAuth from "../Hooks/useAuth";
+import Swal from 'sweetalert2'
 
 
 
@@ -7,9 +8,34 @@ import useAuth from "../Hooks/useAuth";
 const Login = () => {
 
    
-const { logingoogle} =useAuth();
+const { logingoogle,loginempass} =useAuth();
 
-console.log(logingoogle)
+const loginwithemailpass =(e)=>{
+  e.preventDefault()
+
+  const email =e.target.email.value;
+  const password =e.target.password.value;
+  loginempass(email,password)
+  .then(res=>{
+    if(res.user){
+      Swal.fire({
+        title: 'succsess!',
+        text: 'succsesfully registerd,please login now',
+        icon: 'success',
+        confirmButtonText: 'Cool'
+      })
+    }
+  })
+  .catch(err=>{
+    Swal.fire({
+      title: 'Error!',
+      text: `${err.message}`,
+      icon: 'error',
+      confirmButtonText: 'quit'
+    })
+  })
+
+}
    
     const googleloginhandle =()=>{
         logingoogle()
@@ -25,18 +51,18 @@ console.log(logingoogle)
       <p className="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
     </div>
     <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-      <form className="card-body">
+      <form onSubmit={loginwithemailpass} className="card-body">
         <div className="form-control">
           <label className="label">
             <span className="label-text">Email</span>
           </label>
-          <input type="email" placeholder="email" className="input input-bordered" required />
+          <input type="email" placeholder="email" name="email" className="input input-bordered" required />
         </div>
         <div className="form-control">
           <label className="label">
             <span className="label-text">Password</span>
           </label>
-          <input type="password" placeholder="password" className="input input-bordered" required />
+          <input type="password" placeholder="password" name="password" className="input input-bordered" required />
           <label className="label">
             <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
           </label>
@@ -51,7 +77,7 @@ console.log(logingoogle)
       </div>
 
       <div className="p-5">
-            Have an Account? <Link className="text-blue-400" to="/register">Register</Link>
+            New here? Please <Link className="text-blue-400" to="/register">Register</Link>
           </div>
     </div>
   </div>

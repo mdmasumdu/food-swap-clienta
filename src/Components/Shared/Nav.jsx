@@ -1,15 +1,29 @@
 import { Link, NavLink } from "react-router-dom";
+import useAuth from "../Hooks/useAuth";
 
 
 const Nav = () => {
+  const {user,logout} =useAuth();
     const links =<>
     <NavLink to="/">Home</NavLink>
-    <NavLink to="/">Available-Food</NavLink>
-    <NavLink to="/">Add-Food</NavLink>
-    <NavLink to="/">Manage-My-Foods</NavLink>
-    <NavLink to="/">My-Food-Request</NavLink>
-    <NavLink to="/login">Login</NavLink>
+    <NavLink to="/availablefoods">Available-Food</NavLink>
+    {
+      user ? <><NavLink to="/">Add-Food</NavLink>
+
+      <NavLink to="/">Manage-My-Foods</NavLink>
+
+      <NavLink to="/">My-Food-Request</NavLink> </> 
+
+      : <NavLink to="/login">Login</NavLink>
+    }
     </>
+
+
+const handlelogout=()=>{
+  logout()
+  .then(()=>{})
+  .catch(()=>{})
+}
     return (
         <div className="navbar bg-orange-600 text-white">
   <div className="navbar-start">
@@ -31,10 +45,12 @@ const Nav = () => {
   <div className="navbar-end">
   <div className="avatar mr-3">
   <div className="w-10 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
-    <img src={"https://imagizer.imageshack.com/img923/732/ceCsc3.png"} />
+    <img src={user?.photoURL} />
   </div>
 </div>
-    <button className="btn bg-orange-400"><Link to="/register">Register</Link></button>
+  {
+    user ? <button className="btn" onClick={handlelogout}>Logout</button> :  <Link to="/register"> <button className="btn bg-orange-400">Register</button></Link>
+  }
   </div>
 </div>
     );

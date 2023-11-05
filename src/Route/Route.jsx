@@ -3,6 +3,9 @@ import Mainlayout from "../Components/Mainlayout/Mainlayout";
 import Home from "../Components/Home/Home";
 import Login from "../Components/Login/Login";
 import Register from "../Components/Register/Register";
+import Details from "../Components/Details/Details";
+import Private from "../Components/Private";
+import Availablefoods from "../Components/Availablefoods/Availablefoods";
 
 const mycreatedroute =createBrowserRouter([
     {
@@ -20,6 +23,17 @@ const mycreatedroute =createBrowserRouter([
             {
                 path:"/register",
                 element:<Register></Register>
+            },
+            {
+                path:"/details/:id",
+                loader:({params})=>fetch(`http://localhost:5000/availablefood/${params.id}`),
+                element:<Private><Details></Details></Private>
+            }
+            ,
+            {
+                path:"/availablefoods",
+                loader:()=>fetch("http://localhost:5000/availablefood"),
+                element:<Availablefoods></Availablefoods>
             }
         ]
     }
