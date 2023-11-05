@@ -8,7 +8,7 @@ const Nav = () => {
     <NavLink to="/">Home</NavLink>
     <NavLink to="/availablefoods">Available-Food</NavLink>
     {
-      user ? <><NavLink to="/">Add-Food</NavLink>
+      user ? <><NavLink to="/addfood">Add-Food</NavLink>
 
       <NavLink to="/">Manage-My-Foods</NavLink>
 

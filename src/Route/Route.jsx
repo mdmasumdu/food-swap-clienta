@@ -6,6 +6,7 @@ import Register from "../Components/Register/Register";
 import Details from "../Components/Details/Details";
 import Private from "../Components/Private";
 import Availablefoods from "../Components/Availablefoods/Availablefoods";
+import Addfood from "../Components/Addfood/Addfood";
 
 const mycreatedroute =createBrowserRouter([
     {
@@ -34,6 +35,10 @@ const mycreatedroute =createBrowserRouter([
                 path:"/availablefoods",
                 loader:()=>fetch("http://localhost:5000/availablefood"),
                 element:<Availablefoods></Availablefoods>
+            },
+            {
+                path:"/addfood",
+                element:<Private><Addfood></Addfood></Private>
             }
         ]
     }
