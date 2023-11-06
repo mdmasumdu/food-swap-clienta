@@ -1,5 +1,6 @@
 // food_image,food_name,donator_image,donator_name,food_quantity,pickup_location,expired_date,expired_time,additional_notes
 
+import Swal from "sweetalert2";
 import useAuth from "../Hooks/useAuth";
 import useAxios from "../Hooks/useAxios";
 
@@ -7,7 +8,7 @@ const Addfood = () => {
 
     const {user} =useAuth();
     const axiosSecure =useAxios()
-
+  console.log(user.photoURL)
     const addfoodhandler=(e)=>{
         e.preventDefault()
 
@@ -22,11 +23,20 @@ const Addfood = () => {
        const additional_notes=form.additional.value;
        const donator_name = user.displayName;
        const donator_email =user.email;
-           const thefood ={food_name,food_image,donator_image,food_quantity,pickup_location,expired_date,expired_time,additional_notes,donator_name,donator_email}
+           const thefood ={food_name,food_image,donator_image,food_quantity,pickup_location,expired_date,expired_time,additional_notes,donator_name,donator_email,status:"available"}
         
 
            axiosSecure.post("/availablefood",thefood)
-           .then(res=>console.log(res.data))
+           .then(res=>{
+            if(res.data.insertedId){
+                Swal.fire({
+                    title: 'succsess!',
+                    text: 'succsesfully added a product',
+                    icon: 'success',
+                    confirmButtonText: 'Cool'
+                  })
+            }
+           })
     }
     return (
         <div>

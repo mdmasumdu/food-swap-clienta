@@ -2,6 +2,7 @@ import { Link, NavLink } from "react-router-dom";
 import useAuth from "../Hooks/useAuth";
 
 
+
 const Nav = () => {
   const {user,logout} =useAuth();
     const links =<>
@@ -10,14 +11,15 @@ const Nav = () => {
     {
       user ? <><NavLink to="/addfood">Add-Food</NavLink>
 
-      <NavLink to="/">Manage-My-Foods</NavLink>
+      <NavLink to="/managemyfood">Manage-My-Foods</NavLink>
 
-      <NavLink to="/">My-Food-Request</NavLink> </> 
+      <NavLink to="/myfoodreqs">My-Food-Request</NavLink> </> 
 
       : <NavLink to="/login">Login</NavLink>
     }
     </>
-
+ 
+ console.log(user?.photoURL)
 
 const handlelogout=()=>{
   logout()

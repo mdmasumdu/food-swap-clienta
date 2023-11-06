@@ -40,7 +40,8 @@ const Details = () => {
             requestdate:currentDate.toString(),
             pickup_location,
             email:user.email,
-            status:"Available"
+            status:"Available",
+            foodid:_id
         }
     axiosSecure.post('/requested',reqfood)
     .then(res=>{
@@ -49,7 +50,7 @@ const Details = () => {
     
         Swal.fire({
           title: 'succsess!',
-          text: 'succsesfully registerd,please login now',
+          text: 'succsesfully posted a food request',
           icon: 'success',
           confirmButtonText: 'Cool'
         })
@@ -82,41 +83,43 @@ const Details = () => {
     <p> <span className="font-bold">Expire time:</span> {expired_time}</p>
     <p> <span className="font-bold">Details:</span> {additional_notes}</p>
     <div className="card-actions justify-end">
-      {/* Open the modal using document.getElementById('ID').showModal() method */}
-<button className="btn" onClick={()=>document.getElementById('my_modal_1').showModal()}>Request</button>
-<dialog id="my_modal_1" className="modal modal-bottom sm:modal-middle">
-  <div className="modal-box">
-    <h3 className="font-bold text-lg">{food_name}</h3>
-    <img className="w-24" src={food_image} alt="" />
-    <h1><span className="font-bold">id:</span> {_id}</h1>
-    <p><span className="font-bold">Donator Email:</span> {donator_email}</p>
-    <p><span className="font-bold">Donator Name:</span> {donator_name}</p>
-    <p><span className="font-bold">Your email:</span> {user?.email}</p>
-    <p><span className="font-bold">Current Date:</span> {currentDate.toString()}</p>
-    <p><span className="font-bold">Pickup location:</span> {pickup_location}</p>
-    <p><span className="font-bold">Expire date:</span> {expired_date}</p>
-    {/* <p className="py-4">Press ESC key or click the button below to close</p> */}
-    <div>
-      <form onSubmit={requesthandler} method="dialog">
-
-        {/* if there is a button in form, it will close the modal */}
-        <div className="form-control">
-          <label className="label">
-            <span className="label-text">Addtional Notes</span>
-          </label>
-          <input type="text" placeholder="addtional notes" name="notes" className="input input-bordered" required />
+    {
+      food.status === 'available' ? <><button className="btn bg-orange-400" onClick={()=>document.getElementById('my_modal_1').showModal()}>Request</button>
+      <dialog id="my_modal_1" className="modal modal-bottom sm:modal-middle">
+        <div className="modal-box">
+          <h3 className="font-bold text-lg">{food_name}</h3>
+          <img className="w-24" src={food_image} alt="" />
+          <h1><span className="font-bold">id:</span> {_id}</h1>
+          <p><span className="font-bold">Donator Email:</span> {donator_email}</p>
+          <p><span className="font-bold">Donator Name:</span> {donator_name}</p>
+          <p><span className="font-bold">Your email:</span> {user?.email}</p>
+          <p><span className="font-bold">Current Date:</span> {currentDate.toString()}</p>
+          <p><span className="font-bold">Pickup location:</span> {pickup_location}</p>
+          <p><span className="font-bold">Expire date:</span> {expired_date}</p>
+          {/* <p className="py-4">Press ESC key or click the button below to close</p> */}
+          <div>
+            <form onSubmit={requesthandler} method="dialog">
+      
+              {/* if there is a button in form, it will close the modal */}
+              <div className="form-control">
+                <label className="label">
+                  <span className="label-text">Addtional Notes</span>
+                </label>
+                <input type="text" placeholder="addtional notes" name="notes" className="input input-bordered" required />
+              </div>
+              <div className="form-control">
+                <label className="label">
+                  <span className="label-text">Donation Money</span>
+                </label>
+                <input type="text" placeholder="donation money $" name="donation" className="input input-bordered" required />
+              </div>
+              <button onClick={()=>document.getElementById('my_modal_1').close()} className="btn mt-5">Request</button>
+            </form>
+          </div>
         </div>
-        <div className="form-control">
-          <label className="label">
-            <span className="label-text">Donation Money</span>
-          </label>
-          <input type="text" placeholder="donation money $" name="donation" className="input input-bordered" required />
-        </div>
-        <button onClick={()=>document.getElementById('my_modal_1').close()} className="btn mt-5">Request</button>
-      </form>
-    </div>
-  </div>
-</dialog>
+      </dialog></> : <button className="text-orange-700 text-3xl">Already Delivered</button>
+    }
+           
     </div>
   </div>
 </div>

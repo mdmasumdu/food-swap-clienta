@@ -15,8 +15,11 @@ const Foods = () => {
         .then(res=>setFoods(res.data))
     },[axiosSecure])
 
-    const sorteddata = foods.sort((a,b)=>b.food_quantity -a.food_quantity);
-    console.log(sorteddata.slice(0,6))
+    const available =foods.filter(food=>food.status ==="available");
+    const sorteddata = available.sort((a,b)=>b.food_quantity -a.food_quantity);
+   
+
+    
     return (
        <div>
         <h1 className="text-center font-bold text-4xl mt-10 mb-5">Featured Foods</h1>
