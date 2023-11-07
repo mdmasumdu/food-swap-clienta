@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link ,useLocation,useNavigate} from "react-router-dom";
 import useAuth from "../Hooks/useAuth";
 import Swal from 'sweetalert2'
 
@@ -7,7 +7,9 @@ import Swal from 'sweetalert2'
 
 const Login = () => {
 
-   
+   const location =useLocation();
+   const navigate =useNavigate()
+   console.log(location)
 const { logingoogle,loginempass} =useAuth();
 
 const loginwithemailpass =(e)=>{
@@ -23,7 +25,9 @@ const loginwithemailpass =(e)=>{
         text: 'succsesfully registerd,please login now',
         icon: 'success',
         confirmButtonText: 'Cool'
+
       })
+      location?.state ? navigate(`${location?.state}`) : navigate('/');
     }
   })
   .catch(err=>{
@@ -39,7 +43,10 @@ const loginwithemailpass =(e)=>{
    
     const googleloginhandle =()=>{
         logingoogle()
-        .then(res=>console.log(res))
+        .then(res=>{
+          console.log(res.user)
+          location?.state ? navigate(`${location?.state}`) : navigate('/');
+        })
         .catch(err=>console.error(err))
 
     }
