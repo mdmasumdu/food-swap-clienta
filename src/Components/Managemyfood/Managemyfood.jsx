@@ -15,7 +15,9 @@ const Managemyfood = () => {
    
 
     useEffect(()=>{
-        axiosSecure.get(`/myfood/?email=${user?.email}`)
+        axiosSecure.get(`/myfood/?email=${user?.email}`,{
+          withCredentials:true
+        })
         .then(response => {
             setFoods(response.data);
           })
