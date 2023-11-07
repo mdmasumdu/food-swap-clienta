@@ -12,14 +12,14 @@ const Food = ({food}) => {
   </figure>
   <div className="flex items-center justify-around">
   <div className=" flex flex-col items-center">
-    <div className="avatar rounded-full">
-    <div className="w-16">
+    <div className="avatar mt-3 ">
+    <div className="w-16 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
       <img src={donator_image} />
     </div> 
  </div>
      <h1> {donator_name}</h1>
     </div>
-    <h2 className="text-xl font-bold text-orange-400">{food_name}</h2>
+    <h2 className="text-xl font-bold text-orange-600">{food_name}</h2>
   </div>
   <div className="card-body items-center text-center">
    
@@ -30,7 +30,7 @@ const Food = ({food}) => {
     <p> {additional_notes}</p>
   
     <div className="card-actions">
-      <Link to={`/details/${_id}`}><button className="btn bg-orange-400">Show Details</button></Link>
+      <Link to={`/details/${_id}`}><button className="btn bg-orange-600">Show Details</button></Link>
     </div>
   </div>
 </div>

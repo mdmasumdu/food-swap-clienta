@@ -1,16 +1,18 @@
 /* eslint-disable react/prop-types */
 
+import { Link } from "react-router-dom";
 
-const Amangefood = ({food,idx}) => {
+
+const Amangefood = ({food,idx,deleteavailavle}) => {
     console.log("dast",food)
     return (
         <tr>
         <th>{idx+1}</th>
         <th><img className="w-12" src={food.food_image} alt="" /></th>
         <th>{food.food_name}</th>
-        <th><button className="btn bg-orange-400">Edit</button></th>
-        <th><button className="btn bg-orange-400">Delete</button></th>
-        <th><button className="btn bg-orange-400">Manage</button></th>
+        <th><Link to={`/editfood/${food._id}`}><button className="btn bg-orange-600">Edit</button></Link></th>
+        <th><button className="btn bg-orange-600" onClick={()=>deleteavailavle(food._id)}>Delete</button></th>
+        <th><Link to={`/managing/${food._id}`}><button className="btn bg-orange-600">Manage</button></Link></th>
       </tr>
     );
 };

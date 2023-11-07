@@ -68,7 +68,7 @@ const loginwithemailpass =(e)=>{
           </label>
         </div>
         <div className="form-control mt-6">
-          <button className="btn btn-primary">Login</button>
+          <button className="btn bg-orange-600">Login</button>
         </div>
       </form>
 
@@ -77,7 +77,7 @@ const loginwithemailpass =(e)=>{
       </div>
 
       <div className="p-5">
-            New here? Please <Link className="text-blue-400" to="/register">Register</Link>
+            New here? Please <Link className="text-blue-600" to="/register">Register</Link>
           </div>
     </div>
   </div>

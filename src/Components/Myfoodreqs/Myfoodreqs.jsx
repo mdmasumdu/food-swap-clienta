@@ -9,7 +9,9 @@ const Myfoodreqs = () => {
     const axiosSecure =useAxios();
 const [requests,setRequests] =useState([]);
     useEffect(()=>{
-        axiosSecure.get(`/myfoodreq/?email=${user?.email}`)
+        axiosSecure.get(`/myfoodreq/?email=${user?.email}`,{withCredentials:true
+
+        })
         .then(res=>setRequests(res.data))
         
     },[axiosSecure,user])

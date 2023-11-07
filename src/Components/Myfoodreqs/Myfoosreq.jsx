@@ -18,7 +18,7 @@ const Myfoosreq = ({request,idx,setRequests,requests}) => {
         if(sta==="available" ==false){
             return Swal.fire({
                 title: 'error!',
-                text: 'Already delivered,So you can not delete',
+                text: 'Already delivered,So you can not delte',
                 icon: 'error',
                 confirmButtonText: 'Cool'
               })
@@ -53,7 +53,7 @@ const Myfoosreq = ({request,idx,setRequests,requests}) => {
         <td>{requestdate}</td>
         <td>$ {donation_amount}</td>
         <td>{status}</td>
-        <td><button className="btn bg-orange-400 dis"   onClick={()=>deletehandler(_id)}>X</button></td>
+        <td><button className="btn bg-orange-600 dis"   onClick={()=>deletehandler(_id)}>X</button></td>
       </tr>
     );
 };

@@ -39,9 +39,12 @@ const Details = () => {
             expired_date,
             requestdate:currentDate.toString(),
             pickup_location,
-            email:user.email,
+            req_email:user.email,
+            req_name:user.displayName,
             status:"Available",
-            foodid:_id
+            req_img:user.photoURL,
+            foodid:_id,
+           
         }
     axiosSecure.post('/requested',reqfood)
     .then(res=>{
@@ -69,8 +72,8 @@ const Details = () => {
   <div className="card-body">
   <div className=" flex flex-col items-center bg-slate-200 w-72 mx-auto rounded-lg">
     <h1 className="text-3xl font-bold">Donator</h1>
-    <div className="avatar rounded-full">
-    <div className="w-24">
+    <div className="avatar m-3">
+    <div className="w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
       <img src={donator_image} />
     </div> 
  </div>
@@ -84,7 +87,7 @@ const Details = () => {
     <p> <span className="font-bold">Details:</span> {additional_notes}</p>
     <div className="card-actions justify-end">
     {
-      food.status === 'available' ? <><button className="btn bg-orange-400" onClick={()=>document.getElementById('my_modal_1').showModal()}>Request</button>
+      food.status === 'available' ? <><button className="btn bg-orange-600" onClick={()=>document.getElementById('my_modal_1').showModal()}>Request</button>
       <dialog id="my_modal_1" className="modal modal-bottom sm:modal-middle">
         <div className="modal-box">
           <h3 className="font-bold text-lg">{food_name}</h3>

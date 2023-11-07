@@ -51,7 +51,7 @@ const handlelogout=()=>{
   </div>
 </div>
   {
-    user ? <button className="btn" onClick={handlelogout}>Logout</button> :  <Link to="/register"> <button className="btn bg-orange-400">Register</button></Link>
+    user ? <button className="btn" onClick={handlelogout}>Logout</button> :  <Link to="/register"> <button className="btn bg-orange-600">Register</button></Link>
   }
   </div>
 </div>

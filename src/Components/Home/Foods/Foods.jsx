@@ -30,7 +30,7 @@ const Foods = () => {
             
         </div>
         <div className="flex justify-center">
-        <Link to="/availablefoods"><button className="btn bg-orange-400 w-64 m-10">Show ALL</button></Link>
+        <Link to="/availablefoods"><button className="btn bg-orange-600 w-64 m-10">Show ALL</button></Link>
         </div>
        </div>
     );

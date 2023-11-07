@@ -10,7 +10,7 @@ const Private = ({children}) => {
 
 
  if(loading){
-    return "loadding"
+    return <div className="flex justify-center min-h-screen mt-2"><progress className="progress w-full"></progress></div>
  }
 
  if(user?.email){
