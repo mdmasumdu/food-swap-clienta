@@ -18,7 +18,7 @@ const Availablefood = ({food}) => {
        </div>
            <h1> {donator_name}</h1>
           </div>
-          <h2 className="text-xl font-bold text-orange-300">{food_name}</h2>
+          <h2 className="text-xl font-bold text-orange-600">{food_name}</h2>
         </div>
         <div className="card-body items-center text-center">
          

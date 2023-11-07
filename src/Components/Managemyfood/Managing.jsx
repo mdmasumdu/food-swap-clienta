@@ -31,7 +31,7 @@ const Managing = () => {
     return (
         <div className="min-h-screen">
               {
-                fodda == "" ? <p className="text-center text-4xl mt-10 font-bold">no one requested for your food yet</p> :  <table className="table">
+                fodda == "" ? <p className="text-center text-4xl mt-10 font-bold">no one  requested for your food yet</p> :  <table className="table">
                 {/* head */}
                 <thead>
                   <tr>

@@ -1,5 +1,4 @@
-{
-  "food_donors": [
+ [
     {
       "name": "John Doe",
       "img": "https://i.ibb.co/60g0BS8/portrait-successful-man-having-stubble-posing-with-broad-smile-keeping-arms-folded-removebg-preview.png",
@@ -37,7 +36,7 @@
       "food_contributions": 12
     }
   ]
-}
+
 
 
 

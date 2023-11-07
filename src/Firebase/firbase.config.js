@@ -6,12 +6,12 @@ import { initializeApp } from "firebase/app";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyC6tumaIhwhH38CKFffaosP2Hgn5rOxLUs",
-  authDomain: "food-swap-69128.firebaseapp.com",
-  projectId: "food-swap-69128",
-  storageBucket: "food-swap-69128.appspot.com",
-  messagingSenderId: "41396324113",
-  appId: "1:41396324113:web:a617419a01d1ce7bc36eb0"
+  apiKey: process.env.VITE_apiKey,
+  authDomain: process.env.VITE_authDomain,
+  projectId: process.env.VITE_projectId,
+  storageBucket: process.env.VITE_storageBucket,
+  messagingSenderId: process.env.VITE_messagingSenderId,
+  appId: process.env.VITE_appId
 };
 
 // Initialize Firebase
