@@ -42,7 +42,7 @@ const Addfood = () => {
     return (
         <div className="bg-image">
           
-        <div className="p-5 ">
+        <div className="p-5 shadow-2xl ">
           <h1 className="text-center font-bold text-4xl mt-10 mb-5 text-white">Add Your Food</h1>
           <form onSubmit={addfoodhandler}>
 
@@ -118,7 +118,7 @@ const Addfood = () => {
             </div>
                </div>
             <div className="form-control mt-6">
-              <button className="btn bg-orange-600 w-96 mx-auto">Addfood</button>
+              <button className="btn bg-orange-300 w-96 mx-auto">Addfood</button>
             </div>
           </form>
 

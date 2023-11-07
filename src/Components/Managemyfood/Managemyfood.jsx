@@ -59,7 +59,7 @@ const Managemyfood = () => {
 
         
            {
-            foods == "" ? <p className="text-orange-600 text-center text-4xl mt-10">You have not added a food </p>: <table className="table">
+            foods == "" ? <p className="text-orange-300 text-center text-4xl mt-10">You have not added a food </p>: <table className="table">
             {/* head */}
             <thead>
               <tr>

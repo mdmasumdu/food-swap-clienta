@@ -87,7 +87,7 @@ const Details = () => {
     <p> <span className="font-bold">Details:</span> {additional_notes}</p>
     <div className="card-actions justify-end">
     {
-      food.status === 'available' ? <><button className="btn bg-orange-600" onClick={()=>document.getElementById('my_modal_1').showModal()}>Request</button>
+      food.status === 'available' ? <><button className="btn bg-orange-300" onClick={()=>document.getElementById('my_modal_1').showModal()}>Request</button>
       <dialog id="my_modal_1" className="modal modal-bottom sm:modal-middle">
         <div className="modal-box">
           <h3 className="font-bold text-lg">{food_name}</h3>

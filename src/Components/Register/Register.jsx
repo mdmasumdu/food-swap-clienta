@@ -1,6 +1,7 @@
 import { Link, useNavigate } from "react-router-dom";
 import useAuth from "../Hooks/useAuth";
 import Swal from 'sweetalert2'
+import "./Register.css"
 
 const Register = () => {
   const {createuser,updateuser,logout} =useAuth();
@@ -49,7 +50,7 @@ const Register = () => {
   }
     return (
         
-        <div>
+        <div className="bg-img p-5">
           
           <div className="card flex-shrink-0 w-1/2 mx-auto shadow-2xl">
             <h1 className="text-center font-bold text-4xl mt-5">Register Now</h1>
@@ -83,13 +84,13 @@ const Register = () => {
                 
               </div>
               <div className="form-control mt-6">
-                <button className="btn btn-primary">Register</button>
+                <button className="btn">Register</button>
               </div>
             </form>
 
 
           <div className="p-5">
-            Have an Account? <Link className="text-blue-600" to="/login">Login</Link>
+            Have an Account? <Link className="text-blue-300" to="/login">Login</Link>
           </div>
           </div>
         </div>

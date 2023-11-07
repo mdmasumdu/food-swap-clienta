@@ -40,7 +40,7 @@ setShowfood(data)
           <div className="flex justify-center">
           <form onSubmit={seachhandler} action="">
                 <input type="text" ref={myref} placeholder="search by food name" className="p-3 rounded"/>
-                <input type="submit"   value="serach" className="p-3 bg-orange-600 rounded"/>
+                <input type="submit"   value="serach" className="p-3 bg-orange-300 rounded"/>
             </form>
           </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 p-5">

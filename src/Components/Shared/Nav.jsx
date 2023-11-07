@@ -27,7 +27,7 @@ const handlelogout=()=>{
   .catch(()=>{})
 }
     return (
-        <div className="navbar bg-orange-600 text-white">
+        <div className="navbar  bg-orange-400 text-white font-bold p-5">
   <div className="navbar-start">
     <div className="dropdown">
       <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -51,7 +51,7 @@ const handlelogout=()=>{
   </div>
 </div>
   {
-    user ? <button className="btn" onClick={handlelogout}>Logout</button> :  <Link to="/register"> <button className="btn bg-orange-600">Register</button></Link>
+    user ? <button className="btn" onClick={handlelogout}>Logout</button> :  <Link to="/register"> <button className="btn bg-orange-300">Register</button></Link>
   }
   </div>
 </div>

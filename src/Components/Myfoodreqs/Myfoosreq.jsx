@@ -53,7 +53,7 @@ const Myfoosreq = ({request,idx,setRequests,requests}) => {
         <td>{requestdate}</td>
         <td>$ {donation_amount}</td>
         <td>{status}</td>
-        <td><button className="btn bg-orange-600 dis"   onClick={()=>deletehandler(_id)}>X</button></td>
+        <td><button className="btn bg-orange-300 dis"   onClick={()=>deletehandler(_id)}>X</button></td>
       </tr>
     );
 };

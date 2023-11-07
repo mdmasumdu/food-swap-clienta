@@ -19,7 +19,7 @@ const Food = ({food}) => {
  </div>
      <h1> {donator_name}</h1>
     </div>
-    <h2 className="text-xl font-bold text-orange-600">{food_name}</h2>
+    <h2 className="text-xl font-bold text-orange-300">{food_name}</h2>
   </div>
   <div className="card-body items-center text-center">
    
@@ -30,7 +30,7 @@ const Food = ({food}) => {
     <p> {additional_notes}</p>
   
     <div className="card-actions">
-      <Link to={`/details/${_id}`}><button className="btn bg-orange-600">Show Details</button></Link>
+      <Link to={`/details/${_id}`}><button className="btn bg-orange-300">Show Details</button></Link>
     </div>
   </div>
 </div>
