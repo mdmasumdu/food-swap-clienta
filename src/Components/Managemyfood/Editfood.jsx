@@ -31,7 +31,7 @@ const Editfood = () => {
             if(res.data.modifiedCount){
                 Swal.fire({
                     title: 'succsess!',
-                    text: 'succsesfully updated the food',
+                    text: 'succsesfully updated the food you wanted',
                     icon: 'success',
                     confirmButtonText: 'Cool'
                   })
