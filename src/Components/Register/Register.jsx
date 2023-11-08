@@ -15,6 +15,24 @@ const Register = () => {
     const password =form.password.value;
     const photoURL =form.photoURL.value;
     console.log(name,email,password,photoURL)
+
+    if(password.length < 6){
+      return  Swal.fire({
+        title: 'error!',
+        text: 'Password length must be 6 charcters or more',
+        icon: 'error',
+        confirmButtonText: 'Cool'
+      })
+    }
+
+    if( !/^[A-Z]/.test(password)){
+      return  Swal.fire({
+        title: 'error!',
+        text: 'password must have a captital letter',
+        icon: 'error',
+        confirmButtonText: 'Cool'
+      })
+    }
     createuser(email,password)
     .then(res=>{
       console.log(res.user)
