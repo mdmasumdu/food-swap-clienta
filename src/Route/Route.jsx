@@ -34,13 +34,13 @@ const mycreatedroute =createBrowserRouter([
             },
             {
                 path:"/details/:id",
-                loader:({params})=>fetch(`http://localhost:5000/availablefood/${params.id}`),
+                loader:({params})=>fetch(`https://food-swap-server.vercel.app/availablefood/${params.id}`),
                 element:<Private><Details></Details></Private>
             }
             ,
             {
                 path:"/availablefoods",
-                loader:()=>fetch("http://localhost:5000/availablefood"),
+                loader:()=>fetch("https://food-swap-server.vercel.app/availablefood"),
                 element:<Availablefoods></Availablefoods>
             },
             {
@@ -58,12 +58,12 @@ const mycreatedroute =createBrowserRouter([
         
             {
                 path:"/editfood/:id",
-                loader:({params})=>fetch(`http://localhost:5000/availablefood/${params.id}`),
+                loader:({params})=>fetch(`https://food-swap-server.vercel.app/availablefood/${params.id}`),
                 element:<Private><Editfood></Editfood></Private>
             },
             {
                 path:"/managing/:id",
-                loader:({params})=>fetch(`http://localhost:5000/requested/${params.id}`),
+                loader:({params})=>fetch(`https://food-swap-server.vercel.app/requested/${params.id}`),
                 element:<Private><Managing></Managing></Private>
             }
         

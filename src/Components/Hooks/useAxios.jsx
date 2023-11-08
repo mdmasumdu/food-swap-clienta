@@ -7,7 +7,7 @@ import auth from "../../Firebase/firbase.config";
 
 
 const axiosSecure =axios.create({
-    baseURL:"http://localhost:5000",
+    baseURL:"https://food-swap-server.vercel.app",
 })
 
 const useAxios = () => {

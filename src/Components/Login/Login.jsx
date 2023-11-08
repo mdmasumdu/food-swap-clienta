@@ -22,7 +22,7 @@ const loginwithemailpass =(e)=>{
     if(res.user){
       Swal.fire({
         title: 'succsess!',
-        text: 'succsesfully registerd,please login now',
+        text: 'succsesfully logged in',
         icon: 'success',
         confirmButtonText: 'Cool'
 
@@ -45,6 +45,13 @@ const loginwithemailpass =(e)=>{
         logingoogle()
         .then(res=>{
           console.log(res.user)
+          Swal.fire({
+            title: 'succsess!',
+            text: 'succsesfully logged in',
+            icon: 'success',
+            confirmButtonText: 'Cool'
+    
+          })
           location?.state ? navigate(`${location?.state}`) : navigate('/');
         })
         .catch(err=>console.error(err))
