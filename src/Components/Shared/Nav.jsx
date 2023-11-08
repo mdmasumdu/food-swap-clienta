@@ -6,16 +6,16 @@ import useAuth from "../Hooks/useAuth";
 const Nav = () => {
   const {user,logout} =useAuth();
     const links =<>
-    <NavLink to="/">Home</NavLink>
-    <NavLink to="/availablefoods">Available-Food</NavLink>
+    <NavLink  className={({ isActive}) => isActive ? "text-black underline" : ""} to="/">Home</NavLink>
+    <NavLink className={({isActive})=> isActive ? "text-black underline" : ""} to="/availablefoods">Available-Food</NavLink>
     {
-      user ? <><NavLink to="/addfood">Add-Food</NavLink>
+      user ? <><NavLink className={({isActive})=> isActive ? "text-black underline" : ""} to="/addfood">Add-Food</NavLink>
 
-      <NavLink to="/managemyfood">Manage-My-Foods</NavLink>
+      <NavLink className={({isActive})=> isActive ? "text-black underline" : ""} to="/managemyfood">Manage-My-Foods</NavLink>
 
-      <NavLink to="/myfoodreqs">My-Food-Request</NavLink> </> 
+      <NavLink className={({isActive})=> isActive ? "text-black underline" : ""} to="/myfoodreqs">My-Food-Request</NavLink> </> 
 
-      : <NavLink to="/login">Login</NavLink>
+      : <NavLink className={({isActive})=> isActive ? "text-black underline" : ""} to="/login">Login</NavLink>
     }
     </>
  

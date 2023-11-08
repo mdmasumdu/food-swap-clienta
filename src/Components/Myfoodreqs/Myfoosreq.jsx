@@ -18,7 +18,7 @@ const Myfoosreq = ({request,idx,setRequests,requests}) => {
         if(sta==="available" ==false){
             return Swal.fire({
                 title: 'error!',
-                text: 'Already delivered,So you can not delte',
+                text: 'Already delivered,So you can not delete',
                 icon: 'error',
                 confirmButtonText: 'Cool'
               })
@@ -34,7 +34,7 @@ const Myfoosreq = ({request,idx,setRequests,requests}) => {
                 console.log("remaining",remaining)
                 Swal.fire({
                     title: 'succsess!',
-                    text: 'succsesfully registerd,please login now',
+                    text: 'succesfully deleted',
                     icon: 'success',
                     confirmButtonText: 'Cool'
                   })

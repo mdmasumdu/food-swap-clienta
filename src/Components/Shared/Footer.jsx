@@ -2,7 +2,7 @@
 
 const Footer = () => {
     return (
-        <footer className="footer p-10 bg-orange-400 text-base-content">
+        <footer className="footer p-10 bg-orange-300 text-base-content">
         <aside>
          <img className="w-24" src={"https://i.ibb.co/28V61Gv/Yellow-Minimalist-Round-Shaped-Cafe-Logo-removebg-preview.png"} alt="" />
           <p>Food Swap Limited<br/>Providing reliable services 1992</p>
