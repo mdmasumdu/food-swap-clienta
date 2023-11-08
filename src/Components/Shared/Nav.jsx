@@ -27,7 +27,7 @@ const handlelogout=()=>{
   .catch(()=>{})
 }
     return (
-        <div className="navbar  bg-orange-400 text-white font-bold p-5">
+        <div className="navbar  bg-orange-400 text-white font-bold ">
   <div className="navbar-start">
     <div className="dropdown">
       <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -37,7 +37,7 @@ const handlelogout=()=>{
         {links}
       </ul>
     </div>
-    <a className="btn btn-ghost normal-case text-xl">daisyUI</a>
+   <Link to={"/"}><img className="w-28" src={"https://i.ibb.co/28V61Gv/Yellow-Minimalist-Round-Shaped-Cafe-Logo-removebg-preview.png"} alt="" /></Link>
   </div>
   <div className="navbar-center hidden lg:flex ">
     <ul className="menu menu-horizontal px-1 gap-5 text-xl">
@@ -45,11 +45,13 @@ const handlelogout=()=>{
     </ul>
   </div>
   <div className="navbar-end">
-  <div className="avatar mr-3">
-  <div className="w-10 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
-    <img src={user?.photoURL} />
-  </div>
-</div>
+  {
+    user?.email ?   <div className="avatar mr-3">
+    <div className="w-10 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+      <img src={user?.photoURL} />
+    </div>
+  </div> : ""
+  }
   {
     user ? <button className="btn" onClick={handlelogout}>Logout</button> :  <Link to="/register"> <button className="btn bg-orange-300">Register</button></Link>
   }

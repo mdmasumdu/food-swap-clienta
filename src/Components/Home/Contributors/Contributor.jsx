@@ -3,7 +3,7 @@
 
 const Contributor = ({contributor}) => {
     return (
-        <div className="card bg-orange-300 shadow-xl">
+        <div className="card bg-slate-400 rounded-2xl shadow-xl">
         <figure>
         <div className="avatar">
   <div className="w-28 mask mask-squircle">
